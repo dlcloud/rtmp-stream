@@ -19,4 +19,4 @@ elif [[ $INPUT_URL =~ ^(https?\:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$ ]];
 fi
 
 printf "PREPARING TO STREAM \n"
-ffmpeg -i $INPUT_URL -preset $PRESET -tune zerolatency -f flv -c:v libx264 -c:a aac -r 30 -crf $CRF -vf "scale=-1:1080" $SERVER_URL$STREAM_KEY
+!ffmpeg -user_agent "REDLINECLIENT" -i "http://31.172.87.31:2200/R-EX/SPORTS_STAR_SPORTS_TAMIL-in/tracks-v1a1/mono.m3u8?token=RED_WSSGchiwqGgN-JELQZYSew%3D%3D%2C1650358280.9659699029=" -i logo.png -filter_complex "overlay=main_w-overlay_w-5:25" -preset "ultrafast" -tune zerolatency -c:v libx264 -c:a aac -r 30 -crf 30 -f flv "rtmp://ovsu.mycdn.me/input/719993518_719993518_43_32brotn2rq"
